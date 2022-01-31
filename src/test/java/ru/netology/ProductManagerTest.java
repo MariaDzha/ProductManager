@@ -37,29 +37,26 @@ public class ProductManagerTest {
         productManager.add(smartphone3);
     }
     @Test
-    public void shouldSearchByFirst() {
+    public void shouldSearchByExistingManufacturer() {
         Product[] results = productManager.searchBy("Xiaomi");
-        for (Product product : results) {
-            }
+
         Product[] expected = new Product[] {book4, smartphone1, smartphone2};
        assertArrayEquals(expected, results);
     }
 
     @Test
-    public void shouldSearchBySecond() {
+    public void shouldSearchByExistingName() {
         Product[] results = productManager.searchBy("Harry");
-        for (Product product : results) {
-            }
+
         Product[] expected = new Product[] {book1, book2, book3, book4};
 
         assertArrayEquals(expected, results);
     }
 
     @Test
-    public void shouldSearchByThird() {
+    public void shouldSearchByNoExistingManufacturer() {
         Product[] results = productManager.searchBy("Nokia");
-        for (Product product : results) {
-        }
+
         Product[] expected = new Product[0];
 
         assertArrayEquals(expected, results);
